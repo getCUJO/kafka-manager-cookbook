@@ -26,7 +26,7 @@ action :install do
 #    action :add
 #  end
 
-  remote_file "kafka-manager_#{package_version}_all.deb" do
+  remote_file "kafka-manager_#{new_resource.package_version}_all.deb" do
     source eval('"' + download_url + '"')
     owner user
     group user
@@ -34,7 +34,7 @@ action :install do
   end
   
   dpkg_package 'kafka-manager' do
-    source "kafka-manager_#{package_version}_all.deb"
+    source "kafka-manager_#{new_resource.package_version}_all.deb"
 #    version "#{package_version}"
     action :install
   end
