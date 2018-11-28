@@ -27,7 +27,7 @@ action :install do
 #  end
 
   remote_file "kafka-manager_#{new_resource.package_version}_all.deb" do
-    source eval('"' + download_url + '"')
+    source eval('"' + new_resource.download_url + '"')
     owner user
     group user
     mode '0755'
