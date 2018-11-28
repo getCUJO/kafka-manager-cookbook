@@ -4,6 +4,9 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
+property :package_version, String
+property :download_url, String
+
 kafka_manager 'default' do
   package_version "#{node['kafka-manager']['version']}"
   download_url "#{node['kafka-manager']['download_url']}"
